@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FqhPhone</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="str_phoneNumber">请输入手机号</string>
+    <string name="str_smsText">短信内容</string>
+    <string name="button_sms">发送</string>
+
+</resources>
