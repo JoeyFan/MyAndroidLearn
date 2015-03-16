@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.el.R;
 
@@ -18,6 +19,12 @@ public class MainActivity extends ActionBarActivity {
     private Button button;
     private EditText showNum;
     private TextView textView;
+
+    private EditText oneEdit;
+    private EditText twoEdit;
+    private TextView resultTv;
+    private Button  okBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +49,45 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+
+        okBtn=(Button)findViewById(R.id.button1);
+        okBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String one =((EditText)findViewById(R.id.editText1)).getText().toString();
+                String two =((EditText)findViewById(R.id.editText2)).getText().toString();
+                Intent intent=new Intent();
+
+                //intent.putExtra("result",one+"+"+two+"=，是否提交？");
+                intent.setClass(MainActivity.this,ActivityTest.class);
+                Bundle bundle=new Bundle();
+                bundle.putString("result",one+"+"+two+"=，是否提交？");
+                startActivityForResult(intent, 10, bundle);
+            }
+        });
+
+
     }
+
+
+    /**
+     * startActivityForResult 返回结果
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==10){
+            String key=data.getStringExtra("result");
+
+            Toast.makeText(MainActivity.this,key,Toast.LENGTH_LONG).show();
+            resultTv=(TextView)findViewById(R.id.textView3);
+            resultTv.setText(key);
+        }
+    }
+
 
 
     @Override

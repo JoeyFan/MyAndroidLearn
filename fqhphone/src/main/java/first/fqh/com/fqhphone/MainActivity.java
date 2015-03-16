@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import first.fqh.com.R;
 
@@ -34,10 +35,9 @@ public class MainActivity extends ActionBarActivity {
                 for (String text:smsManager.divideMessage(sms)){
                     smsManager.sendTextMessage(number.toString(),null,text,null,null);
                 }
+                Toast.makeText(getApplicationContext(),"发送成功",Toast.LENGTH_SHORT).show();
             }
         });
-
-
     }
 
 
