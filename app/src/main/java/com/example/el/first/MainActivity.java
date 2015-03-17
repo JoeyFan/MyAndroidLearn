@@ -57,12 +57,12 @@ public class MainActivity extends ActionBarActivity {
                 String one =((EditText)findViewById(R.id.editText1)).getText().toString();
                 String two =((EditText)findViewById(R.id.editText2)).getText().toString();
                 Intent intent=new Intent();
-
-                //intent.putExtra("result",one+"+"+two+"=，是否提交？");
-                intent.setClass(MainActivity.this,ActivityTest.class);
                 Bundle bundle=new Bundle();
                 bundle.putString("result",one+"+"+two+"=，是否提交？");
-                startActivityForResult(intent, 10, bundle);
+                intent.putExtras(bundle);
+                intent.setClass(MainActivity.this,ActivityTest.class);
+                intent.getExtras().putString("result",one+"+"+two+"=，是否提交？");
+                startActivityForResult(intent, 10);
             }
         });
 

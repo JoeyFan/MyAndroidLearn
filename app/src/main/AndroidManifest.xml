@@ -2,30 +2,34 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.el"
     android:versionCode="1"
-    android:versionName="1.0">
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="8" />
+    <!-- 权限 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
 
-        <!--主Activity-->
+        <!-- 主Activity -->
         <activity
             android:name=".first.MainActivity"
-            android:label="@string/title_activity_main">
+            android:label="@string/title_activity_main" >
             <intent-filter>
-                <!--包含下面两行代码的activity，启动此APP，程序的启动入口就是这个activity-->
+
+                <!-- 包含下面两行代码的activity，启动此APP，程序的启动入口就是这个activity -->
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-    
+        <activity
+            android:name=".first.ActivityTest"
+            android:label="@string/title_activity_activity_test" >
+        </activity>
     </application>
 
-    <uses-sdk android:minSdkVersion="8"/>
-    <!--权限-->
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
 </manifest>

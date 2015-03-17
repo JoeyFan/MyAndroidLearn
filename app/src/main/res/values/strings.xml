@@ -6,6 +6,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="show_text_main">你好，这是我的第一个Android应用！</string>
-
     <string name="phone_btn">拨打</string>
+    <string name="title_activity_activity_test">ActivityTest</string>
+
 </resources>
